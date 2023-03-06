@@ -10,7 +10,7 @@ int check_cycle(listint_t *head)
 	int *node1, *node2;
 
 	if (head == NULL)
-		retrn (0);
+		return (0);
 
 	while (head != NULL)
 	{
