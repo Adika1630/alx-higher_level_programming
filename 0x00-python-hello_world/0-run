@@ -1,2 +1,2 @@
-#!/bin/bash
-python3 $PYFILE
+#!/usr/bin/python3
+$PYFILE = print("Best school")
