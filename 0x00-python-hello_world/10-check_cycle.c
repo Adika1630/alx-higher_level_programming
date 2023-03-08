@@ -7,22 +7,19 @@
  */
 int check_cycle(listint_t *head)
 {
-	int *node1, *node2;
+	listint_t fast, slow;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		return (0);
 
-	while (head != NULL)
+	while (slow && fast && fast->next)
 	{
-		node1 = (int *)&head;
-		node2 = (int *)&head->next;
-		if (head->next == NULL)
-			return (0);
-
-		if (*node1 - *node2 <= 0)
+		if (fast == slow)
+		{
 			return (1);
-
-		head = head->next;
+		}
+		slow = slow->next;
+		fast = fast->next->next;
 	}
 	return (0);
 }
